@@ -12,11 +12,14 @@ namespace HRPortal.Services.Repository
     {
         public void RegisterEmployee(EmployeeDetailsDTO employeeDetails);
         public Employee EmployeeLogin(EmployeeLogin login);
-        public List<ShowEmployeeDetails> GetllAllDetails();
+        public List<ShowEmployeeDetails> GetllAllDetails(int pageNumber, int pageSize, string filter, string sortBy);
 
         public ShowEmployeeDetails EditEmployee(EditEmployeeDetails employeeDetails);
 
         public string DeleteEmployee(int id);
+
+        public ShowEmployeeDetails FindById(int id);
+      
 
 
     }

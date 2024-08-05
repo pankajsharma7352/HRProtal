@@ -10,16 +10,19 @@ namespace HRPortal.Web.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeServices employeeServices;
+      
 
         public EmployeeController(IEmployeeServices employeeServices)
         {
             this.employeeServices = employeeServices;
+       
         }
 
         [HttpGet("getAllDetails")]
-      public List<ShowEmployeeDetails> getAllDetails()
+      public List<ShowEmployeeDetails> getAllDetails([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10, [FromQuery] string search="", [FromQuery] string sortBy = "")
         {
-            return employeeServices.GetllAllDetails();
+            
+            return employeeServices.GetllAllDetails(pageNumber,pageSize,search,sortBy);
         }
 
         [HttpPut("EditEmployee")]
@@ -32,6 +35,13 @@ namespace HRPortal.Web.Controllers
         public string DeleteEmpById(int id)
         {
             return employeeServices.DeleteEmployee(id);
+        }
+
+
+        [HttpGet("SearchById{id}")]
+        public ShowEmployeeDetails Search(int id)
+        {
+            return employeeServices.FindById(id);
         }
     }
 }

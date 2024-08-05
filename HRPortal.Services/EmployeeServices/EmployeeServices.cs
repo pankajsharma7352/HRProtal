@@ -34,9 +34,9 @@ namespace HRPortal.Services.Services
             return employeeRepository.EmployeeLogin(login);
         }
 
-        public List<ShowEmployeeDetails> GetllAllDetails()
+        public List<ShowEmployeeDetails> GetllAllDetails(int pageNumber, int pageSize, string filter, string sortBy)
         {
-            return employeeRepository.GetllAllDetails();
+            return employeeRepository.GetllAllDetails(pageNumber,pageSize,filter,sortBy);
         }
 
         public void RegisterEmployee(EmployeeDetailsDTO employeeDetails)
@@ -44,6 +44,11 @@ namespace HRPortal.Services.Services
             employeeRepository.RegisterEmployee(employeeDetails);
         }
 
-       
+        public ShowEmployeeDetails FindById(int id)
+        {
+            return employeeRepository.FindById(id);
+        }
+
+
     }
 }

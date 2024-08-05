@@ -1,5 +1,6 @@
 
 using HRPortal.Data.HRPortalContext;
+using HRPortal.Services.Automapper;
 using HRPortal.Services.Repository;
 using HRPortal.Services.Services;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,7 @@ namespace HRPortal.Web
             builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             builder.Services.AddTransient<IEmployeeServices, EmployeeServices>();
 
-
+            builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
             builder.Services.AddDbContext<HRDbContext>(options =>
        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
