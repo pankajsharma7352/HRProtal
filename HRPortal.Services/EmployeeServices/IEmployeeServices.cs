@@ -23,5 +23,7 @@ namespace HRPortal.Services.Services
 
         public ShowEmployeeDetails FindById(int id);
 
+        public List<ShowEmployeeDetails> GetllAllDetails();
+
     }
 }

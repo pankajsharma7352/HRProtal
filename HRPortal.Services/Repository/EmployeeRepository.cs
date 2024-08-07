@@ -187,5 +187,28 @@ namespace HRPortal.Services.Repository
             return showDetails; ;
 
         }
+
+        public List<ShowEmployeeDetails> GetllAllDetails()
+        {
+            List<Employee> employeeList = _hrDbContext.Employees.ToList();
+            List<Address> addressList = _hrDbContext.Addresses.ToList();
+
+            var employeeDetails = from e in employeeList
+                                  join a in addressList on e.AddressId equals a.AddressId
+                                  select new ShowEmployeeDetails
+                                  {
+                                      FirstName = e.FirstName,
+                                      LastName = e.LastName,
+                                      Email = e.Email,
+                                      Password = e.Password,
+                                      Phone = e.Phone,
+                                      Gender = e.Gender,
+                                      AddressLine1 = a.AddressLine1,
+                                      City = a.City,
+                                      State = a.State,
+                                      PinCode = a.PinCode,
+                                  };
+            return employeeDetails.ToList();
+        }
     }
 }

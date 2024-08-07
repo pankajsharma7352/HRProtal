@@ -19,7 +19,9 @@ namespace HRPortal.Services.Repository
         public string DeleteEmployee(int id);
 
         public ShowEmployeeDetails FindById(int id);
-      
+
+        public List<ShowEmployeeDetails> GetllAllDetails();
+
 
 
     }

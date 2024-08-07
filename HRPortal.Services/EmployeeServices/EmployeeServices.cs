@@ -49,6 +49,9 @@ namespace HRPortal.Services.Services
             return employeeRepository.FindById(id);
         }
 
-
+        public List<ShowEmployeeDetails> GetllAllDetails()
+        {
+            return employeeRepository.GetllAllDetails();
+        }
     }
 }
