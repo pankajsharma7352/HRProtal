@@ -125,7 +125,7 @@ namespace HRPortal.Web.Controllers
                 }
             }
 
-            return Ok(employees);
+            return Ok("Data uploaded successfully..");
         }
 
     }
