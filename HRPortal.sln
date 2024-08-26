@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRPortal.Web", "HRPortal.Web\HRPortal.Web.csproj", "{28D3FB22-50C5-44E5-92C2-BFCF47B11C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRPortal.Web", "HRPortal.Web\HRPortal.Web.csproj", "{28D3FB22-50C5-44E5-92C2-BFCF47B11C67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRPortal.Services", "HRPortal.Services\HRPortal.Services.csproj", "{0AF0295F-8AF2-4BEE-AA0B-E4BC7017D5C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRPortal.Services", "HRPortal.Services\HRPortal.Services.csproj", "{0AF0295F-8AF2-4BEE-AA0B-E4BC7017D5C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRPortal.Data", "HRPortal.Data\HRPortal.Data.csproj", "{BD5F233E-CE9A-4CF3-A83B-FC90F7F1A03B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRPortal.Data", "HRPortal.Data\HRPortal.Data.csproj", "{BD5F233E-CE9A-4CF3-A83B-FC90F7F1A03B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRPortal.Models", "HRPortal.Model\HRPortal.Models.csproj", "{A6249BBA-BB1D-4E63-B5DF-4EE33274BD15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRPortal.Models", "HRPortal.Model\HRPortal.Models.csproj", "{A6249BBA-BB1D-4E63-B5DF-4EE33274BD15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRPortal.Comm", "HRPortal.Comm\HRPortal.Comm.csproj", "{0ADF442C-1D5E-4597-A22B-F4BB720F99AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRPortal.Comm", "HRPortal.Comm\HRPortal.Comm.csproj", "{0ADF442C-1D5E-4597-A22B-F4BB720F99AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRPortal.Email", "HRPortal.Email\HRPortal.Email.csproj", "{A193A83B-21C5-4674-8CF7-EDBEA0C6D61C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0ADF442C-1D5E-4597-A22B-F4BB720F99AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ADF442C-1D5E-4597-A22B-F4BB720F99AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ADF442C-1D5E-4597-A22B-F4BB720F99AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A193A83B-21C5-4674-8CF7-EDBEA0C6D61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A193A83B-21C5-4674-8CF7-EDBEA0C6D61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A193A83B-21C5-4674-8CF7-EDBEA0C6D61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A193A83B-21C5-4674-8CF7-EDBEA0C6D61C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

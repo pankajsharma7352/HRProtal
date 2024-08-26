@@ -4,7 +4,9 @@ using HRPortal.Data.HRPortalContext;
 using HRPortal.Services.Automapper;
 using HRPortal.Services.Repository;
 using HRPortal.Services.Services;
+using HRPortal.Web.EmailService;
 using Microsoft.EntityFrameworkCore;
+using SixLabors.ImageSharp;
 
 namespace HRPortal.Web
 {
@@ -27,6 +29,22 @@ namespace HRPortal.Web
 
 
             builder.Services.AddScoped<PdfService>();
+            builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+            builder.Services.AddTransient<ISendMailService, MailService>();
+
+
+            // CORS Policy
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
             builder.Services.AddControllers();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -35,17 +53,18 @@ namespace HRPortal.Web
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            //Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment() || app.Environment.IsProduction() )
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
+            app.UseCors("AllowAllOrigins");
 
             app.MapControllers();
 
